@@ -9,7 +9,7 @@ public class AppTest {
     @DisplayName("All lists are empty")
     void allListsAreEmpty() {
         App app = new App();
-        int[] a = {1};
+        int[] a = {};
         int[] b = {};
         int[] expected = {};
         int[] result = app.intercalate(a, b);
@@ -25,5 +25,15 @@ public class AppTest {
         boolean result = app.listsHaveNLength(a, b);
         assertTrue(result);
     }
-
+    @Test
+    @DisplayName("Generated list have size 2n")
+    void generatedListHaveSize2N() {
+        App app = new App();
+        app.setN(3);
+        int[] a = {1, 2, 3};
+        int[] b = {4, 5, 6};
+        int expected = 6;
+        int[] result = app.intercalate(a, b);
+        assertEquals(expected, result.length);
+    }
 }
