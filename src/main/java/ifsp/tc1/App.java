@@ -16,7 +16,10 @@ public class App {
     }
 
     public int[] intercalate(int[] a, int[] b) {
-        int[] c = {};
+        int[] c = new int[a.length + b.length];
+        for (int i = 0; i < c.length; i++) {
+            c[i] = i;
+        }
         return c;
     }
 }
